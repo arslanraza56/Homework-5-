@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+        <button id="addButton">Add 3 Items</button>
+        <div id="itemList"></div>
+    
+        <script>
+            const button = document.getElementById('addButton');
+            const itemList = document.getElementById('itemList');
+    
+            button.addEventListener('click', function() {
+                let items = [];  // Array to store user-entered items
+    
+                // Prompt user for 3 items
+                for (let i = 0; i < 3; i++) {
+                    const item = prompt(`Enter item ${i + 1}:`);
+                    if (item) {
+                        items.push(item);  // Add valid item to the array
+                    } else {
+                        alert('Please enter a value for all items.');
+                        break;  // Exit the loop if user cancels a prompt
+                    }
+                }
+    
+                // Clear existing items (optional)
+                itemList.innerHTML = '';  // Uncomment to clear previous entries
+    
+                // Append items as list items
+                if (items.length > 0) {
+                    const list = document.createElement('ul');
+                    items.forEach(item => {
+                        const listItem = document.createElement('li');
+                        listItem.textContent = item;
+                        list.appendChild(listItem);
+                    });
+                    itemList.appendChild(list);
+                }
+            });
+        </script> 
+</body>
+</html>

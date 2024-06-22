@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="myDiv">Arslan Raza</div>
+
+    <script>
+        const div = document.getElementById('myDiv');
+        let hoverCount = 0;
+
+        div.addEventListener('mouseover', function() {
+            hoverCount++;
+
+            if (hoverCount > 10) {
+                alert('You are an anonymous user.'); // Informative alert message
+                document.body.style.backgroundColor = 'red';
+            }
+        });
+    </script>
+    </body>
+</html>
